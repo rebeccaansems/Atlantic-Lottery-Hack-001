@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class CharacterClicked : MonoBehaviour {
@@ -17,7 +18,7 @@ public class CharacterClicked : MonoBehaviour {
     {
         if (this.GetComponent<CharacterSpecificData>().isKiller)
         {
-            Application.LoadLevel(Application.loadedLevel);
+            SceneManager.LoadScene(0);
         }
         else
         {

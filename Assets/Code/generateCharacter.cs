@@ -1,30 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class generateCharacter : MonoBehaviour
+public class GenerateCharacter : MonoBehaviour
 {
-    public static int Hair;
-    public static int Pants;
-    public static int Shirt;
-    public static int Skin;
+    public GameObject character;
 
     // Use this for initialization
     void Start()
     {
-        Hair = Random.Range(0, 23);
-        Pants = Random.Range(0, 3);
-        Shirt = Random.Range(0, 7);
-        Skin = Random.Range(0, 1);
+        for(int i=0; i<CharacterData.numCharacters; i++)
+        {
+            GameObject newCharacter = (GameObject)Instantiate(character, new Vector2(Random.Range(-5f, 5f), Random.Range(-2.1f, 4f)), Quaternion.identity);
+            newCharacter.GetComponent<CharacterSpecificData>().currentCharacterNumber = i;
+        }
     }
-
-    void Regenerate()
-    {
-        Hair = Random.Range(0, 23);
-        Pants = Random.Range(0, 3);
-        Shirt = Random.Range(0, 7);
-        Skin = Random.Range(0, 1);
-    }
-
     // Update is called once per frame
     void Update()
     {

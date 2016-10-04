@@ -23,7 +23,6 @@ public class ChangeSprite : MonoBehaviour {
         else if (bodyPart.Equals("Skin"))
         {
             this.GetComponent<SpriteRenderer>().sprite = colorOptions[CharacterData.characterData[transform.root.GetComponent<CharacterSpecificData>().currentCharacterNumber,3]];
-
         }
     }
 }

@@ -4,8 +4,7 @@ using System.Collections;
 public class CharacterData : MonoBehaviour {
 
     public static int[,] characterData;
-    public int numCharacters;
-    public GameObject character;
+    public static int numCharacters = 25;
 
 	// Use this for initialization
 	void Start () {
@@ -16,7 +15,7 @@ public class CharacterData : MonoBehaviour {
             int Hair = Random.Range(0, 23);
             int Pants = Random.Range(0, 3);
             int Shirt = Random.Range(0, 7);
-            int Skin = Random.Range(0, 2);
+            int Skin = Random.Range(0, 1);
 
             //prevent duplicates of killer
             while(Hair == characterData[0,0] && Pants == characterData[0, 1] && Shirt == characterData[0, 2] && Skin == characterData[0, 3])
@@ -24,21 +23,13 @@ public class CharacterData : MonoBehaviour {
                 Hair = Random.Range(0, 23);
                 Pants = Random.Range(0, 3);
                 Shirt = Random.Range(0, 7);
-                Skin = Random.Range(0, 2);
+                Skin = Random.Range(0, 1);
             }
 
             characterData[i,0] = Hair;
             characterData[i,1] = Pants;
             characterData[i,2] = Shirt;
             characterData[i,3] = Skin;
-
-            GameObject newCharacter = (GameObject)Instantiate(character, new Vector2(Random.Range(-5f, 5f), Random.Range(-2.1f, 4f)), Quaternion.identity);
-            newCharacter.GetComponent<CharacterSpecificData>().currentCharacterNumber = i;
         }
     }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
