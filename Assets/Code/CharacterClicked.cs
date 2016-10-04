@@ -4,25 +4,22 @@ using System.Collections;
 
 public class CharacterClicked : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        
-	}
-    
+    public Sprite[] splat;
+    bool characterNotClicked = true;
+
     void OnMouseDown()
     {
         if (this.GetComponent<CharacterSpecificData>().isKiller)
         {
             SceneManager.LoadScene(0);
         }
-        else
+        else if (characterNotClicked)
         {
-            Destroy(this.gameObject);
+            this.GetComponent<SpriteRenderer>().sprite = splat[CharacterData.characterData[this.GetComponent<CharacterSpecificData>().currentCharacterNumber, 2]];
+            this.GetComponent<AIMovement>().enabled = false;
+            this.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 50));
+            characterNotClicked = false;
+            Destroy(this.transform.GetChild(0).gameObject);
         }
     }
 }
