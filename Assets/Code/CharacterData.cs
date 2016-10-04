@@ -6,6 +6,8 @@ public class CharacterData : MonoBehaviour {
     public static int[,] characterData;
     public static int numCharacters = 25;
 
+    public static int secondsToFinish = 0;
+
 	// Use this for initialization
 	void Start () {
         characterData = new int[numCharacters, 4];

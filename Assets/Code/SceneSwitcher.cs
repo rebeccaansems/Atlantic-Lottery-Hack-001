@@ -8,4 +8,9 @@ public class SceneSwitcher : MonoBehaviour {
     {
         SceneManager.LoadScene(1);
     }
+
+    public void GameOverEnterButtonPressed()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

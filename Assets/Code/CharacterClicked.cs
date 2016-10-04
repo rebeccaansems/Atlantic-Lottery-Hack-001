@@ -11,10 +11,12 @@ public class CharacterClicked : MonoBehaviour {
     {
         if (this.GetComponent<CharacterSpecificData>().isKiller)
         {
-            SceneManager.LoadScene(0);
+            CharacterData.secondsToFinish += (int)Time.timeSinceLevelLoad;
+            SceneManager.LoadScene(3);
         }
         else if (characterNotClicked)
         {
+            CharacterData.secondsToFinish += 5;
             this.GetComponent<SpriteRenderer>().sprite = splat[CharacterData.characterData[this.GetComponent<CharacterSpecificData>().currentCharacterNumber, 2]];
             this.GetComponent<AIMovement>().enabled = false;
             this.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 50));
