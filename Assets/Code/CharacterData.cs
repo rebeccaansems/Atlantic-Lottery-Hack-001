@@ -10,6 +10,7 @@ public class CharacterData : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        secondsToFinish = 0;
         characterData = new int[numCharacters, 4];
 
         for (int i=0; i<numCharacters; i++)

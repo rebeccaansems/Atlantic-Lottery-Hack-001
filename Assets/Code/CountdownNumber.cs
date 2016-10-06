@@ -5,7 +5,7 @@ using System.Collections;
 
 public class CountdownNumber : MonoBehaviour
 {
-    public Text number;
+    public Text number, heading;
     public GameObject wantedCharacter;
 
     // Update is called once per frame
@@ -34,6 +34,7 @@ public class CountdownNumber : MonoBehaviour
         else if (Time.timeSinceLevelLoad < 8)
         {
             number.text = "";
+            heading.text = "Catch the theif!";
             wantedCharacter.transform.position = new Vector3(wantedCharacter.transform.position.x, wantedCharacter.transform.position.y, 0);
         }
         else
