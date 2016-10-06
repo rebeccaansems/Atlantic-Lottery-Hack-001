@@ -30,8 +30,11 @@ public class HighscoreTable : MonoBehaviour
 
         for (int i=0; i<3; i++)
         {
-            PlayerPrefs.SetString("Highscore " + i, highscores[i].Key??"NO ONE");
-            PlayerPrefs.SetInt("HighscoreScore " + i, highscores[i].Value);
+            if(highscores[i].Key != null)
+            {
+                PlayerPrefs.SetString("Highscore " + i, highscores[i].Key);
+                PlayerPrefs.SetInt("HighscoreScore " + i, highscores[i].Value);
+            }
         }
 
         firstName.text = highscores[0].Key;
