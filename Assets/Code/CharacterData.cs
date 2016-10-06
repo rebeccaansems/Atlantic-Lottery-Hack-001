@@ -4,7 +4,7 @@ using System.Collections;
 public class CharacterData : MonoBehaviour {
 
     public static int[,] characterData;
-    public static int numCharacters = 25;
+    public static int numCharacters = 30;
 
     public static int secondsToFinish = 0;
     public static string playerName = "";

@@ -28,6 +28,7 @@ public class SceneSwitcher : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.R))
             {
+                Time.timeScale = 1;
                 SceneManager.LoadScene(1);
             }
         }
