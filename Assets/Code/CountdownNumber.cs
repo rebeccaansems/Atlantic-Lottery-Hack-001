@@ -34,7 +34,7 @@ public class CountdownNumber : MonoBehaviour
         else if (Time.timeSinceLevelLoad < 8)
         {
             number.text = "";
-            heading.text = "Catch the theif!";
+            heading.text = "Catch the thief!";
             wantedCharacter.transform.position = new Vector3(wantedCharacter.transform.position.x, wantedCharacter.transform.position.y, 0);
         }
         else if (Time.timeSinceLevelLoad < 9)
