@@ -5,6 +5,7 @@ using System.Collections;
 public class CharacterClicked : MonoBehaviour {
 
     public Sprite[] splat;
+    public AudioClip splatNoise;
     bool characterNotClicked = true;
 
     void OnMouseDown()
@@ -18,6 +19,7 @@ public class CharacterClicked : MonoBehaviour {
         {
             CharacterData.secondsToFinish += 5;
             this.GetComponent<SpriteRenderer>().sprite = splat[CharacterData.characterData[this.GetComponent<CharacterSpecificData>().currentCharacterNumber, 2]];
+            this.GetComponent<AudioSource>().PlayOneShot(splatNoise);
             this.GetComponent<AIMovement>().enabled = false;
             this.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 50));
             characterNotClicked = false;

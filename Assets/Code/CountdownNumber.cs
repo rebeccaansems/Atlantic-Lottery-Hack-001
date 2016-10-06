@@ -37,6 +37,9 @@ public class CountdownNumber : MonoBehaviour
             heading.text = "Catch the theif!";
             wantedCharacter.transform.position = new Vector3(wantedCharacter.transform.position.x, wantedCharacter.transform.position.y, 0);
         }
+        else if (Time.timeSinceLevelLoad < 9)
+        {
+        }
         else
         {
             SceneManager.LoadScene(2);
