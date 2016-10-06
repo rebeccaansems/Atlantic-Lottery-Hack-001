@@ -7,6 +7,7 @@ public class SceneSwitcher : MonoBehaviour
 {
     public GameObject pauseScreen;
     public Sprite pauseSprite;
+    public InputField nameField;
 
     void Update()
     {
@@ -25,14 +26,15 @@ public class SceneSwitcher : MonoBehaviour
                     pauseScreen.GetComponent<SpriteRenderer>().sprite = pauseSprite;
                 }
             }
-            else if (Input.GetKeyDown(KeyCode.Q))
-            {
-                Application.Quit();
-            }
             else if (Input.GetKeyDown(KeyCode.R))
             {
                 SceneManager.LoadScene(1);
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Application.Quit();
         }
     }
 
@@ -42,6 +44,12 @@ public class SceneSwitcher : MonoBehaviour
     }
 
     public void GameOverEnterButtonPressed()
+    {
+        CharacterData.playerName = nameField.text ?? "Anonymous";
+        SceneManager.LoadScene(4);
+    }
+
+    public void HighscoreContinueButtonPressed()
     {
         SceneManager.LoadScene(0);
     }

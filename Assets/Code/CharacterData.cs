@@ -7,6 +7,7 @@ public class CharacterData : MonoBehaviour {
     public static int numCharacters = 25;
 
     public static int secondsToFinish = 0;
+    public static string playerName = "";
 
 	// Use this for initialization
 	void Start () {
